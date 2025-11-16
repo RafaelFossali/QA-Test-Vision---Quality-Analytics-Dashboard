@@ -1,7 +1,10 @@
+'''
 🧠 QA Test Vision — Quality Analytics Dashboard
 
 Dashboard interativo para centralizar, mensurar e visualizar métricas de qualidade do Super App, com foco em bugs, regressões e eficiência de testes por sprint.
+'''
 
+'''
 📋 Intuito do Projeto
 
 O QA Test Vision foi criado para:
@@ -13,6 +16,7 @@ Oferecer insights visuais para Sprint Review.
 Acompanhar tendências de qualidade ao longo das releases.
 
 Melhorar a eficiência do processo regressivo e a confiabilidade das entregas.
+
 
 🧩 Objetivos Específicos
 
