@@ -1,276 +1,226 @@
-Claro! Abaixo está um [README.md](http://README.md) completo para o projeto QA Test Vision, baseado no que você já descreveu na página. Você pode copiar e colar direto no repositório.
-
-```markdown
-# 🧠 QA Test Vision — Quality Analytics Dashboard
+🧠 QA Test Vision — Quality Analytics Dashboard
 
 Dashboard interativo para centralizar, mensurar e visualizar métricas de qualidade do Super App, com foco em bugs, regressões e eficiência de testes por sprint.
 
----
-
-## 📋 Intuito do Projeto
+📋 Intuito do Projeto
 
 O QA Test Vision foi criado para:
-- Consolidar dados de defeitos encontrados, corrigidos e despriorizados.
-- Oferecer insights visuais para Sprint Review.
-- Acompanhar tendências de qualidade ao longo das releases.
-- Melhorar a eficiência do processo regressivo e a confiabilidade das entregas.
 
----
+Consolidar dados de defeitos encontrados, corrigidos e despriorizados.
 
-## 🧩 Objetivos Específicos
+Oferecer insights visuais para Sprint Review.
 
-- Automatizar a coleta de dados sobre bugs por sprint.
-- Categorizar bugs por status: corrigido, pendente, despriorizado, transferido.
-- Gerar relatórios HTML interativos com gráficos dinâmicos.
-- Integrar com GitLab CI/CD para execução e publicação automática.
+Acompanhar tendências de qualidade ao longo das releases.
 
----
+Melhorar a eficiência do processo regressivo e a confiabilidade das entregas.
 
-## 🐍 Stack Tecnológica
+🧩 Objetivos Específicos
 
-- Linguagem: Python 3.x  
-- Web/App: Plotly Dash  
-- Visualização: Plotly Express  
-- Dados: Pandas  
-- Pipeline: GitLab CI/CD  
-- Versionamento: Git + GitLab
+Automatizar a coleta de dados sobre bugs por sprint.
 
----
+Categorizar bugs por status: corrigido, pendente, despriorizado, transferido.
 
-## 🏗️ Estrutura do Projeto
+Gerar relatórios HTML interativos com gráficos dinâmicos.
 
-```
+Integrar com GitLab CI/CD para execução e publicação automática.
 
-QA-TEST-VISION/bug_report/
+🐍 Stack Tecnológica
 
-├── data/
+Linguagem: Python 3.x
 
-│   ├── bugs_sprint.csv           # Dados brutos da sprint
+Web/App: Plotly Dash
 
-│   └── bugs_history.csv          # Histórico consolidado
+Visualização: Plotly Express
 
-├── src/
+Dados: Pandas
 
-│   ├── **init**.py
+Pipeline: GitLab CI/CD
 
-│   ├── data_[processing.py](http://processing.py)        # Tratamento e análise dos dados
+Versionamento: Git + GitLab/GitHub
 
-│   ├── [charts.py](http://charts.py)                 # Funções de gráficos (Plotly)
+🏗️ Estrutura do Projeto
+QA-TEST-VISION/
+└── bug_report/
+    ├── data/
+    │   ├── bugs_sprint.csv        # Dados brutos da sprint
+    │   └── bugs_history.csv       # Histórico consolidado
+    │
+    ├── src/
+    │   ├── __init__.py
+    │   ├── data_processing.py     # Tratamento e análise dos dados
+    │   ├── charts.py              # Funções de gráficos (Plotly)
+    │   ├── dashboard.py           # Layout e callbacks do Dash
+    │   └── utils.py               # Funções auxiliares
+    │
+    ├── tests/
+    │   ├── test_data_processing.py
+    │   └── test_dashboard.py
+    │
+    ├── .gitlab-ci.yml
+    ├── requirements.txt
+    ├── README.md
+    └── app.py                     # Arquivo principal do dashboard
 
-│   ├── [dashboard.py](http://dashboard.py)              # Layout e callbacks do Dash
+⚙️ Instalação e Execução Local
+Pré-requisitos
 
-│   └── [utils.py](http://utils.py)                  # Funções auxiliares (datas, cálculos)
+Python 3.10+
 
-├── tests/
+Git
 
-│   ├── test_data_[processing.py](http://processing.py)   # Testes unitários
+(Opcional) Ambiente virtual
 
-│   └── test_[dashboard.py](http://dashboard.py)
-
-├── .gitlab-ci.yml                # Pipeline CI/CD
-
-├── requirements.txt              # Dependências
-
-├── [README.md](http://README.md)                     # Documentação
-
-└── [app.py](http://app.py)                        # Bootstrap do dashboard
-
-```
-
----
-
-## ⚙️ Instalação e Execução Local
-
-Pré-requisitos:
-- Python 3.10+
-- Git
-- (Opcional) Ambiente virtual
-
-Passos:
-```
-
+Passos para execução
 # Clonar o repositório
+git clone https://github.com/RafaelFossali/QA-Test-Vision---Quality-Analytics-Dashboard.git
+cd QA-Test-Vision---Quality-Analytics-Dashboard
 
-git clone https://gitlab.com/seu-usuario/qalytics.git
-
-cd qalytics
-
-# Criar e ativar o venv
-
+# Criar e ativar o ambiente virtual
 python -m venv venv
 
 # Linux/macOS
-
 source venv/bin/activate
 
 # Windows
-
-venvScriptsactivate
+venv\Scripts\activate
 
 # Instalar dependências
-
 pip install -r requirements.txt
 
 # Executar o dashboard
+python app.py
 
-python [app.py](http://app.py)
 
-```
+Acesse o dashboard em:
+👉 http://localhost:8050/
 
-Acesse o dashboard em: [http://localhost:8050[^http://localhost:8050/]](http://localhost:8050[^http://localhost:8050/])
+📚 Dados de Entrada
+data/bugs_sprint.csv
 
----
+Campos recomendados:
 
-## 📚 Dados de Entrada
+id
 
-- data/bugs_sprint.csv  
-  - Exemplo de colunas: id, titulo, status, origem, responsavel, created_at, closed_at, sprint
-- data/bugs_history.csv  
-  - Histórico consolidado de sprints anteriores, mesmo schema
+titulo
 
-Boas práticas:
-- Padronize status em: corrigido, pendente, despriorizado, transferido.
-- Datas em ISO-8601.
-- Evite valores nulos em colunas-chave como status e sprint.
+status
 
----
+origem
 
-## ▶️ Uso
+responsavel
 
-Execução local:
-```
+created_at
 
-python [app.py](http://app.py)
+closed_at
 
-```
+sprint
 
-Principais funcionalidades do dashboard:
-- Filtros por sprint, status e origem.
-- Gráficos dinâmicos e responsivos.
-- Tabela interativa com busca e ordenação.
-- Exportação de relatório HTML estático.
+data/bugs_history.csv
 
----
+Mesmo schema do arquivo acima
 
-## 🧪 Testes
+Consolidado de várias sprints
 
-```
+Boas práticas
+
+Status padronizados: corrigido, pendente, despriorizado, transferido
+
+Datas no formato ISO-8601
+
+Evitar valores nulos em colunas-chave
+
+▶️ Uso
+
+Para executar localmente:
+
+python app.py
+
+Funcionalidades
+
+Filtros por sprint, status e origem
+
+Gráficos dinâmicos e responsivos
+
+Tabela interativa com busca e ordenação
+
+Exportação de relatório HTML estático
+
+🧪 Testes
+
+Executar os testes:
 
 pytest --maxfail=1 --disable-warnings -q
 
-```
+Estratégia de testes
 
-Estratégia:
-- Testes unitários para processamento de dados.
-- Smoke tests para componentes do Dash.
+Testes unitários para funções de processamento
 
----
+Smoke tests para componentes do Dash
 
-## 🔁 Integração com GitLab CI/CD
+🔁 Integração com GitLab CI/CD
 
-Pipeline em `.gitlab-ci.yml`:
-- Instala dependências
-- Executa testes
-- Gera relatório HTML
-- Publica como artefato ou deploy estático
-
-Exemplo:
-```
+Exemplo de .gitlab-ci.yml:
 
 stages:
-
-- test
-- report
+  - test
+  - report
 
 variables:
-
-PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
 
 cache:
-
-paths:
-
-- .cache/pip
+  paths:
+    - .cache/pip
 
 test_job:
-
-stage: test
-
-image: python:3.11
-
-script:
-
-- pip install -r requirements.txt
-- pytest --maxfail=1 --disable-warnings -q
+  stage: test
+  image: python:3.11
+  script:
+    - pip install -r requirements.txt
+    - pytest --maxfail=1 --disable-warnings -q
 
 generate_report:
+  stage: report
+  image: python:3.11
+  script:
+    - pip install -r requirements.txt
+    - python app.py
+  artifacts:
+    paths:
+      - reports/
+    expire_in: 1 week
 
-stage: report
+📊 Visualizações Disponíveis
 
-image: python:3.11
+Barras: bugs por status
 
-script:
+Pizza: proporção por origem
 
-- pip install -r requirements.txt
-- python [app.py](http://app.py)
+Linha: evolução por sprint
 
-artifacts:
+Tabela: com filtros e ordenação
 
-paths:
-
-- reports/
-
-expire_in: 1 week
-
-```
-
----
-
-## 📊 Visualizações
-
-- Barras: bugs por status.
-- Pizza: proporção por origem.
-- Linha: evolução por sprint.
-- Tabela: listagem detalhada com responsáveis.
-
----
-
-## 🧰 Scripts úteis
-
-Sugestões de scripts no `Makefile`:
-```
-
+🧰 Scripts úteis (Makefile opcional)
 install:
-
-tpip install -r requirements.txt
-
-lint:
-
-trufflehog || echo "add your linter"
+	pip install -r requirements.txt
 
 test:
-
-tpytest --maxfail=1 --disable-warnings -q
+	pytest --maxfail=1 --disable-warnings -q
 
 run:
+	python app.py
 
-tpython [app.py](http://app.py)
+🗺️ Roadmap
 
-```
+Coleta automática de dados via API do GitLab
 
----
+Persistência em banco local
 
-## 🗺️ Roadmap
+Métricas de lead time e cycle time
 
-- Integração direta com API do GitLab para coleta automática.
-- Persistência em banco leve para histórico longo.
-- Métricas de tempo de ciclo e lead time.
-- Exportação para PDF.
+Exportação do dashboard para PDF
 
----
+👤 Autor
 
-## 👤 Autor
-
-- Autor: Rafael Fossali  
-- Função: QA Engineer  
-- Propósito: Automação e melhoria contínua de QA
+Rafael Fossali
+QA Engineer • Automação & Analytics de Qualidade
