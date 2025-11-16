@@ -41,7 +41,7 @@ O QA Test Vision foi criado para:
 
 ```
 
-qalytics/
+QA-TEST-VISION/bug_report/
 
 ├── data/
 
