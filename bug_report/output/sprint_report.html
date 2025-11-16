@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Relatório de Bugs - {{ sprint }}</title>
+    <title>Relatório de Bugs - Sprint 1</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 30px; }
         h1 { color: #333; }
@@ -13,17 +13,24 @@
     </style>
 </head>
 <body>
-    <h1>Relatório - {{ sprint }}</h1>
+    <h1>Relatório - Sprint 1</h1>
 
     <h2>Resumo dos Bugs</h2>
     <table>
         <tr><th>Categoria</th><th>Quantidade</th></tr>
-        {% for item, valor in dados.items() %}
-        <tr>
-            <td>{{ item }}</td>
-            <td>{{ valor }}</td>
-        </tr>
-        {% endfor %}
+
+        <tr><td>Bugs reportados (iOS)</td><td>7</td></tr>
+        <tr><td>Bugs reportados (Android)</td><td>5</td></tr>
+        <tr><td>Bugs reportados (WEB)</td><td>5</td></tr>
+
+        <tr><td>iOS corrigidos</td><td>6</td></tr>
+        <tr><td>Android corrigidos</td><td>5</td></tr>
+        <tr><td>WEB corrigidos</td><td>3</td></tr>
+
+        <tr><td>iOS pendentes</td><td>1</td></tr>
+        <tr><td>WEB despriorizados</td><td>2</td></tr>
+
+        <tr><td>Bugs de outros times</td><td>0</td></tr>
     </table>
 
     <div class="footer">

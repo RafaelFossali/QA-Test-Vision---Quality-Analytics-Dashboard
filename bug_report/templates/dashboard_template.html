@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - QA Regressive Vision</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;">
+
+    <h1>Dashboard de Bugs - QA Regressive Vision</h1>
+
+    <h2>Sprint 1</h2>
+    <div id="grafico_sprint1" style="width: 100%; height: 400px; background:white; padding:10px;"></div>
+
+    <h2>Sprint 2</h2>
+    <div id="grafico_sprint2" style="width: 100%; height: 400px; background:white; padding:10px;"></div>
+
+    <h2>Comparativo Sprint 1 x Sprint 2</h2>
+    <div id="grafico_comparativo" style="width: 100%; height: 400px; background:white; padding:10px;"></div>
+
+    <script>
+        const sprint1 = {{ dados_sprint1 | tojson }};
+        const sprint2 = {{ dados_sprint2 | tojson }};
+
+        // Gráfico Sprint 1
+        Plotly.newPlot("grafico_sprint1", [{
+            x: sprint1.categorias,
+            y: sprint1.quantidades,
+            type: "bar"
+        }]);
+
+        // Gráfico Sprint 2
+        Plotly.newPlot("grafico_sprint2", [{
+            x: sprint2.categorias,
+            y: sprint2.quantidades,
+            type: "bar"
+        }]);
+
+        // Gráfico Comparativo
+        Plotly.newPlot("grafico_comparativo", [
+            {
+                x: sprint1.categorias,
+                y: sprint1.quantidades,
+                name: "Sprint 1",
+                type: "bar"
+            },
+            {
+                x: sprint2.categorias,
+                y: sprint2.quantidades,
+                name: "Sprint 2",
+                type: "bar"
+            }
+        ]);
+    </script>
+
+</body>
+</html>
