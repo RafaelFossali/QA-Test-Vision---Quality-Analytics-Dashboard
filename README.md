@@ -1,5 +1,5 @@
 
-## 🧠 QA Test Vision — Quality Analytics Dashboard
+## 🧠 QA Regressive Vision — Quality Analytics Dashboard
 
 Dashboard interativo para centralizar, mensurar e visualizar métricas de qualidade do Super App, com foco em bugs, regressões e eficiência de testes por sprint.
 
