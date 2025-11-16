@@ -1,0 +1,60 @@
+stages:
+  - test
+  - report
+  - deploy
+
+variables:
+  PYTHONUNBUFFERED: "1"
+
+# Etapa 1 - Testes de qualidade e geração de relatório
+generate_report:
+  stage: report
+  image: python:3.10
+  script:
+    - pip install -r requirements.txt
+    - python generate_report.py
+  artifacts:
+    paths:
+      - output/
+    expire_in: 1 week
+
+# Etapa 2 - Deploy do dashboard Plotly Dash
+deploy_dashboard:
+  stage: deploy
+  image: python:3.10
+  script:
+    - pip install -r requirements.txt
+    - python app.py &
+    - sleep 5
+  only:
+    - main
+
+    
+
+name: Generate QA Report
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 20 * * 5"  # sexta às 20h
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Instalar dependências
+        run: |
+          pip install -r requirements.txt
+
+      - name: Gerar relatório
+        run: |
+          python generate_report.py
+
+      - name: Upload do relatório
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-report
+          path: output/
