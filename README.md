@@ -1,11 +1,10 @@
-'''
-🧠 QA Test Vision — Quality Analytics Dashboard
+
+## 🧠 QA Test Vision — Quality Analytics Dashboard
 
 Dashboard interativo para centralizar, mensurar e visualizar métricas de qualidade do Super App, com foco em bugs, regressões e eficiência de testes por sprint.
-'''
 
-'''
-📋 Intuito do Projeto
+
+## 📋 Intuito do Projeto
 
 O QA Test Vision foi criado para:
 
@@ -18,7 +17,7 @@ Acompanhar tendências de qualidade ao longo das releases.
 Melhorar a eficiência do processo regressivo e a confiabilidade das entregas.
 
 
-🧩 Objetivos Específicos
+## 🧩 Objetivos Específicos
 
 Automatizar a coleta de dados sobre bugs por sprint.
 
@@ -28,7 +27,8 @@ Gerar relatórios HTML interativos com gráficos dinâmicos.
 
 Integrar com GitLab CI/CD para execução e publicação automática.
 
-🐍 Stack Tecnológica
+
+## 🐍 Stack Tecnológica
 
 Linguagem: Python 3.x
 
@@ -42,9 +42,11 @@ Pipeline: GitLab CI/CD
 
 Versionamento: Git + GitLab/GitHub
 
-🏗️ Estrutura do Projeto
-QA-TEST-VISION/
+
+## 🏗️ Estrutura do Projeto
+QA-TEST-VISION
 └── bug_report/
+
     ├── data/
     │   ├── bugs_sprint.csv        # Dados brutos da sprint
     │   └── bugs_history.csv       # Histórico consolidado
@@ -65,7 +67,8 @@ QA-TEST-VISION/
     ├── README.md
     └── app.py                     # Arquivo principal do dashboard
 
-⚙️ Instalação e Execução Local
+
+## ⚙️ Instalação e Execução Local
 Pré-requisitos
 
 Python 3.10+
@@ -74,8 +77,10 @@ Git
 
 (Opcional) Ambiente virtual
 
-Passos para execução
+## Passos para execução
+
 # Clonar o repositório
+
 git clone https://github.com/RafaelFossali/QA-Test-Vision---Quality-Analytics-Dashboard.git
 cd QA-Test-Vision---Quality-Analytics-Dashboard
 
@@ -98,42 +103,43 @@ python app.py
 Acesse o dashboard em:
 👉 http://localhost:8050/
 
-📚 Dados de Entrada
+## 📚 Dados de Entrada
 data/bugs_sprint.csv
 
-Campos recomendados:
+- Campos recomendados:
 
-id
+- id
 
-titulo
+- titulo
 
-status
+- status
 
-origem
+- origem
 
-responsavel
+- responsavel
 
-created_at
+- created_at
 
-closed_at
+- closed_at
 
-sprint
+- sprint
 
-data/bugs_history.csv
+- data/bugs_history.csv
 
-Mesmo schema do arquivo acima
+- Mesmo schema do arquivo acima
 
-Consolidado de várias sprints
+- Consolidado de várias sprints
 
-Boas práticas
 
-Status padronizados: corrigido, pendente, despriorizado, transferido
+## Boas práticas
 
-Datas no formato ISO-8601
+- Status padronizados: corrigido, pendente, despriorizado, transferido
 
-Evitar valores nulos em colunas-chave
+- Datas no formato ISO-8601
 
-▶️ Uso
+- Evitar valores nulos em colunas-chave
+
+## ▶️ Uso
 
 Para executar localmente:
 
@@ -149,7 +155,8 @@ Tabela interativa com busca e ordenação
 
 Exportação de relatório HTML estático
 
-🧪 Testes
+
+## 🧪 Testes
 
 Executar os testes:
 
@@ -161,7 +168,8 @@ Testes unitários para funções de processamento
 
 Smoke tests para componentes do Dash
 
-🔁 Integração com GitLab CI/CD
+
+##🔁 Integração com GitLab CI/CD
 
 Exemplo de .gitlab-ci.yml:
 
@@ -194,7 +202,8 @@ generate_report:
       - reports/
     expire_in: 1 week
 
-📊 Visualizações Disponíveis
+
+## 📊 Visualizações Disponíveis
 
 Barras: bugs por status
 
@@ -204,7 +213,8 @@ Linha: evolução por sprint
 
 Tabela: com filtros e ordenação
 
-🧰 Scripts úteis (Makefile opcional)
+
+## 🧰 Scripts úteis (Makefile opcional)
 install:
 	pip install -r requirements.txt
 
@@ -214,7 +224,8 @@ test:
 run:
 	python app.py
 
-🗺️ Roadmap
+
+## 🗺️ Roadmap
 
 Coleta automática de dados via API do GitLab
 
@@ -224,7 +235,7 @@ Métricas de lead time e cycle time
 
 Exportação do dashboard para PDF
 
-👤 Autor
+## 👤 Autor
 
 Rafael Fossali
 QA Engineer • Automação & Analytics de Qualidade
