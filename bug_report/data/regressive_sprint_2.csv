@@ -1,0 +1,11 @@
+categoria,quantidade
+bugs_reportados_total,17
+bugs_reportados_ios,7
+bugs_reportados_android,5
+bugs_reportados_web,5
+corrigidos_ios,6
+corrigidos_android,5
+corrigidos_web,3
+pendentes_ios,1
+despriorizados_web,2
+bugs_outro_time,3
